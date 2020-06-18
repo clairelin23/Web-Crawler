@@ -25,6 +25,8 @@ def ok_to_crawl(url):
     # Build the corresponding robots.txt url name
     robot = urllib.parse.urljoin(f'{parsed_url.scheme}://{parsed_url.netloc}',
                                  '/robots.txt')
+    print(parsed_url.scheme)
+    print(parsed_url.netloc)
     user_agent = urllib.request.URLopener.version  # our user-agent
     rp = urllib.robotparser.RobotFileParser()
     rp.set_url(robot)
